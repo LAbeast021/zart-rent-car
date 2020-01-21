@@ -28,13 +28,17 @@ function getUser() {
 }
 
 function signup(user) {
+  console.log( `this is user pass to sign up = ${user}`)
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
     body: JSON.stringify(user)
   })
   .then(res => {
-    if (res.ok) return res.json();
+    console.log(`this is res in signup = ${res}`)
+    if (res.ok) {
+      console.log()
+      return res.json();}
     // Probably a duplicate email
     throw new Error('Email already taken!');
   })

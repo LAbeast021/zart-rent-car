@@ -6,7 +6,7 @@ var SALT_ROUNDS = 6;
 var userSchema = new Schema ({
     first_name: {type: String, required:true},
     last_name : {type: String, required:true},
-    user_name : {type: String, required:true},
+    username : {type: String, required:true},
     email : {
         type:String,
         required:true,
@@ -19,7 +19,31 @@ var userSchema = new Schema ({
 
 },{
     timestamps:true
-})
+});
+
+
+userSchema.set('toJSON', {
+    transform: function(doc, ret) {
+      // remove the password property when serializing doc to JSON
+      console.log(`this is ret in models = ${ret}`)
+      delete ret.password;
+      return ret;
+    }
+  });
+  
+  userSchema.pre('save', function(next) {
+    const user = this;
+    if (!user.isModified('password')) return next();
+    // password has changed! - salt and hash
+    bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
+      user.password = hash;
+      return next();
+    });
+  });
+  
+  userSchema.methods.comparePassword = function(tryPassword, cb) {
+    bcrypt.compare(tryPassword, this.password, cb);
+  }
 
 
 
