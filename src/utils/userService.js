@@ -9,13 +9,18 @@ export default {
 };
 
 function login(creds) {
+  console.log(`hit the userservice login with = ${creds}`)
   return fetch(BASE_URL + 'login', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
     body: JSON.stringify(creds)
   }).then(res => {
-    if (res.ok) return res.json();
-    throw new Error('Bad Credentials!');
+    if (res.ok) {
+      let respond = res.json();
+      console.log(`userservive => login --- ${respond}`)
+      return respond}
+    // throw new Error('Bad Credentials!');
+    alert('after respond in user service')
   }).then(({token}) => tokenService.setToken(token))
 }
 

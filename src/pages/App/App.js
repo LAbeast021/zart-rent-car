@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import userService from '../../utils/userService';
 import './App.css';
-// //////////// PAGES ///////////////////////////
+// //////////// PAGES and COMPONENTS  ///////////////////////////
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import NavBar from '../../components/navbar/NavBar';
+import NewCarPage from '../NewCarPage/NewCarPage';
+
 
 class App extends Component {
   constructor() {
@@ -18,13 +21,27 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  }
+
+  handleAddCar = (newCar) => {
+    console.log('add car ')
+  }
+
+
+  // //////// RENDER /////////////////////////////
   render (){
     console.log(this.state.user);
   return (
     <div className="App">
-        <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
-        <hr></hr>
-        <Link to='/login' className='NavBar-link'>Log in </Link>
+
+      <NavBar
+      user= {this.state.user}
+      handleLogout = {this.handleLogout}
+      ></NavBar>
+      {/* /* ///////////////// routers /////////////////////// */ }
       <Switch>
         <Route exact path='/signup' render={({ history }) => 
               <SignupPage
@@ -38,6 +55,13 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route exact path='/sellCar' render={() => 
+            <NewCarPage 
+            handleAddCar={this.handleAddCar}
+            user = {this.state.user}
+            />
+
+        }></Route>
         </Switch>
     </div>
   );

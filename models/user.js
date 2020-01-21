@@ -14,8 +14,8 @@ var userSchema = new Schema ({
         unique:true
     },
     password : {type:String, required:true},
-
-
+    profilePic : {type:String},
+    bio: {type:String}
 
 },{
     timestamps:true
