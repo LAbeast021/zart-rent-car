@@ -27,8 +27,8 @@ class App extends Component {
   }
 
   handleAddCar = (newCar) => {
-    console.log('add car ')
-  }
+    console.log(newCar);
+  };
 
 
   // //////// RENDER /////////////////////////////

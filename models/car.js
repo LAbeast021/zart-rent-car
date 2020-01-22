@@ -13,7 +13,8 @@ var carSchema = new Schema ( {
     sellerUsername: {type:String},
     exColor:{type:String},
     intColor:{type:String},
-    engine:{type:String}
+    engine:{type:String},
+    milage:{type:Number}
   
 })
 
