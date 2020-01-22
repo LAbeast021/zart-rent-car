@@ -23,10 +23,15 @@ fileUploaded = e => {
     render () {
         return (
             <>
-            <h1>Add Your Car for sale</h1>
-        <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-         <input type="file" onChange={this.fileUploaded} />
-        </form>
+            <h1>Add Your Car for sale &nbsp;&nbsp;&nbsp;<p>(you wont be able to change later)</p></h1>
+            <input type="text" name="brand" value={this.state.b}/>
+            <input type="text"/>
+            <input type="text"/>
+            <input type="text"/>
+            <input type="text"/>
+            <input type="text"/>
+            <input type="text"/>
+               
             </>
         )
     }
