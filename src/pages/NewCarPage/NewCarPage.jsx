@@ -53,7 +53,7 @@ saveTheCar = async (e) => {
             <input type="text" name="intColor" value={this.state.intColor} placeholder="Enter Interior Color" onChange={this.handleChange}/>
             <input type="text" name="engine" value={this.state.engine} placeholder="Enter engine type" onChange={this.handleChange}/>
             <input type="text" name="milage" value={this.state.milage} placeholder="Enter milage on the car" onChange={this.handleChange}/>
-            <input type="text" name="price" value={this.state.price} placeholder="How Much ??" onChange={this.handleChange}/>
+            <input type="text" name="price" value={this.state.price} placeholder="How Much ?? " onChange={this.handleChange}/>
             <input type="file" multiple name="images" onChange={this.handleFileUpload} />
             <button onClick={this.saveTheCar} > Add the car </button>
            
