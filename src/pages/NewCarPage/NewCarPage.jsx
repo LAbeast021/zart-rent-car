@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import multer from 'multer';
+var formData = new FormData();
 
 class NewCarPage extends Component {
     state = {
@@ -15,19 +16,28 @@ class NewCarPage extends Component {
         exColor:'',
         intColor:'',
         engine:'',
-        milage:''
+        milage:'',
+        price:''
     }
 
-fileUploaded = e => {
-    console.log(e.target.files[0].__proto__)
+handleFileUpload = e => {
+    formData.delete('images')
+    for (let i = 0; i < e.target.files.length; i++) {
+        formData.append('images', e.target.files[i]);
+    }
+    
+
 };
 handleChange = e => {
     this.setState({
-        [e.target.name] : e.target.value
+         [e.target.name] : e.target.value,
     })
 };
-saveTheCar = () => {
-    this.props.handleAddCar(this.state);
+saveTheCar = async (e) => {
+    e.preventDefault(); 
+    formData.delete('carInformation');
+    await formData.append('carInformation' , JSON.stringify(this.state))
+    this.props.handleAddCar(formData);
 };
 
     render () {
@@ -43,7 +53,8 @@ saveTheCar = () => {
             <input type="text" name="intColor" value={this.state.intColor} placeholder="Enter Interior Color" onChange={this.handleChange}/>
             <input type="text" name="engine" value={this.state.engine} placeholder="Enter engine type" onChange={this.handleChange}/>
             <input type="text" name="milage" value={this.state.milage} placeholder="Enter milage on the car" onChange={this.handleChange}/>
-            <input type="file"/>
+            <input type="text" name="price" value={this.state.price} placeholder="How Much ??" onChange={this.handleChange}/>
+            <input type="file" multiple name="images" onChange={this.handleFileUpload} />
             <button onClick={this.saveTheCar} > Add the car </button>
            
                

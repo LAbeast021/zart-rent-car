@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import userService from '../../utils/userService';
+import carService from '../../utils/carService';
 import './App.css';
 // //////////// PAGES and COMPONENTS  ///////////////////////////
 import SignupPage from '../SignupPage/SignupPage';
@@ -26,8 +27,9 @@ class App extends Component {
     this.setState({user: null});
   }
 
-  handleAddCar = (newCar) => {
-    console.log(newCar);
+  handleAddCar = async (newCar) => {
+    await carService.addCar(newCar);
+    this.props.history.push('/')
   };
 
 
