@@ -1,5 +1,6 @@
 .postContainer{
     border: 3px solid darkslategray;
+    border-radius: 10px;
     width: 60%;
     height: 300px;
     margin-left: 17%;
@@ -10,20 +11,29 @@
     align-items: center;
 }
 .image{
-    max-width: 300px;
-    max-height: 80%;
+    z-index: 5;
+    max-width: 400px;
+    max-height: 90%;
     margin: 0.2%;
+    border: 3px solid grey;
+    box-shadow: 3px 3px 4px 20px rgb(0, 0, 0);
 }
 .informationContainer{
-    border: 3px solid rebeccapurple;
+    /* border: 3px solid rebeccapurple; */
+    box-shadow: 0px 0px 3px 3px grey;
+    border-radius: 10px;
     width: 100%;
     height: 80%;
     margin: 0.5%;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 .imageHolder{
-    width:100%;
+    width:auto;
+    border: 3px solid gray;
+    background-color: rgba(0, 0, 0, 0.822);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
    
 }
@@ -33,3 +43,14 @@
     margin: 1%;
     
 }
+.button:hover{
+    background-color: teal;
+    color: white;
+}
+/* .message{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    border: 2px solid red;
+} */

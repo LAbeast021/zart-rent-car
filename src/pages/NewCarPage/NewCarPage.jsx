@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import multer from 'multer';
+import styles from './NewCarPage.module.css';
 var formData = new FormData();
 
 class NewCarPage extends Component {
@@ -43,19 +44,28 @@ saveTheCar = async (e) => {
     render () {
         return (
             <>
-            <h1>Add Your Car for sale &nbsp;&nbsp;&nbsp;<p>(you wont be able to change later)</p></h1>
-            <input type="text" name="brand" value={this.state.brand} placeholder="Enter the Brand"  onChange={this.handleChange}/>
-            <input type="text" name="model" value={this.state.model} placeholder="Enter the Model" onChange={this.handleChange}/>
-            <input type="text" name="year" value={this.state.year} placeholder="Enter the year" onChange={this.handleChange}/>
-            <input type="text" name="seats" value={this.state.seats} placeholder="Enter the Number of Seats" onChange={this.handleChange}/>
-            <input type="text" name="condition" value={this.state.condition} placeholder="state the condition" onChange={this.handleChange}/>
-            <input type="text" name="exColor" value={this.state.exColor} placeholder="Enter Exxterior Color" onChange={this.handleChange}/>
-            <input type="text" name="intColor" value={this.state.intColor} placeholder="Enter Interior Color" onChange={this.handleChange}/>
-            <input type="text" name="engine" value={this.state.engine} placeholder="Enter engine type" onChange={this.handleChange}/>
-            <input type="text" name="milage" value={this.state.milage} placeholder="Enter milage on the car" onChange={this.handleChange}/>
-            <input type="text" name="price" value={this.state.price} placeholder="How Much ?? " onChange={this.handleChange}/>
-            <input type="file" multiple name="images" onChange={this.handleFileUpload} />
+            <h2>Add Your Car for sale </h2>
+            <hr/>
+            <h3> You Wont be able to change the information later</h3>
+            <hr/>
+            <h4>You can Upload up to 15 picture of your car</h4>
+            <hr/>
+            <div className={styles.formHolder}>
+            <div className={`${styles.form} form-group `}>
+            <input required className="form-control" type="text" name="brand" value={this.state.brand} placeholder="Enter the Brand"  onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="model" value={this.state.model} placeholder="Enter the Model" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="year" value={this.state.year} placeholder="Enter the year" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="seats" value={this.state.seats} placeholder="Enter the Number of Seats" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="condition" value={this.state.condition} placeholder="state the condition" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="exColor" value={this.state.exColor} placeholder="Enter Exxterior Color" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="intColor" value={this.state.intColor} placeholder="Enter Interior Color" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="engine" value={this.state.engine} placeholder="Enter engine type" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="milage" value={this.state.milage} placeholder="Enter milage on the car" onChange={this.handleChange}/>
+            <input required className="form-control" type="text" name="price" value={this.state.price} placeholder="Enter the price $" onChange={this.handleChange}/>
+            <input required className="form-control" type="file" multiple name="images" onChange={this.handleFileUpload} /> 
+            </div>
             <button onClick={this.saveTheCar} > Add the car </button>
+            </div>
            
                
             </>

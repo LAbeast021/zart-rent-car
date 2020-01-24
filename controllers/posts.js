@@ -5,7 +5,8 @@ module.exports = {
     getUserPosts,
     getPostDetail,
     getAllPosts,
-    addComment
+    addComment,
+    deleteComment
 };
 
 async function getUserPosts (req, res){
@@ -20,7 +21,6 @@ async function getAllPosts (req, res){
 }
 async function getPostDetail (req, res){
     await Car.findOne({_id : req.params.id}, (err,post) => {
-        console.log(post)
         res.status(200).json(post)
     });
     
@@ -28,9 +28,21 @@ async function getPostDetail (req, res){
     
 }
 async function addComment (req, res) {
-    await Car.findOne({_id : req.params.id}, function(err, post){
-        post.comments.push(req.body)
-        post.save()
+    await Car.findOne({_id : req.params.id}, function(err, car){
+        car.comments.push(req.body)
+        car.save()
     })
-    res.status(200).json(post)
+    res.status(200).json({
+        sag:'ok'
+    })
+}
+async function deleteComment (req,res){
+    await Car.findOne({_id : req.params.id}, function(err,car){
+        console.log('carrrrrrr',car.comments)
+        car.comments.splice(req.params.idx,1)
+        car.save()
+        res.status(200).json({
+            ok:'ok'
+        })
+    })
 }

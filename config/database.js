@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true ,
+    useFindAndModify:false,
+    useCreateIndex:true
 });
 
 // just to check that we are connected : 

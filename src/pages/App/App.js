@@ -57,7 +57,18 @@ class App extends Component {
               this.state.user ? 
                 <HomePage user={this.state.user} />
                 :
+                <div style={{
+                  width:'50%',
+                  marginLeft:'25%',
+                  border:'2px solid grey'
+                }}>
                 <h1 > Welcome to zart buy zart sell</h1>
+                <hr />
+                <h3> A place where you can easily sell or buy cars </h3>
+                <hr />
+                <h3> If you Have an account login if not create an account to start</h3>
+                </div>
+                
             }/>
         <Route exact path='/signup' render={({ history }) => 
               <SignupPage
@@ -84,10 +95,11 @@ class App extends Component {
           />
         }>
         </Route>
-        <Route exact path='/detail/:value' render= {({match})=> 
+        <Route exact path='/detail/:value' render= {({match,history})=> 
           <DetailPage 
           user = {this.state.user}
           match={match}
+          history={history}
           />
         }>
         </Route>
