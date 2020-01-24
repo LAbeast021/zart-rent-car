@@ -11,13 +11,13 @@ Zart sell Zart buy is a web app  where you can easily sell or buy cars.
 ------------
 
 # Home
-![Home Pic]("../../public/images/Screen&#32;Shot&#32;2019-12-06&#32;at&#32;8.27.08&#32;AM.png)
+![Home Pic]("./../pics/Screen&#32;Shot&#32;2020-01-24&#32;at&#32;9.39.11&#32;AM.png)
 ------------
 
 
 
 # Profile
-![Home Pic]("../../public/images/Screen&#32;Shot&#32;2019-12-06&#32;at&#32;8.27.27&#32;AM.png)
+![Home Pic]("./../pics/Screen&#32;Shot&#32;2020-01-24&#32;at&#32;9.39.26&#32;AM.png)
 ------------
 # Technologies  Used : 
 
