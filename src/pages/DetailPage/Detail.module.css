@@ -47,10 +47,22 @@
     background-color: teal;
     color: white;
 }
-/* .message{
+.message{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 30%;
-    border: 2px solid red;
-} */
+    /* border: 1px solid rgb(121, 119, 119); */
+    border-bottom: 1px dotted grey ;
+    margin-bottom: 1%;
+}
+.messageHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.message > button:hover{
+    background-color: seagreen;
+    color: rgb(236, 149, 149);
+}

@@ -48,7 +48,7 @@ class ProfilePage extends Component {
                                 <h4> Price: {post.price} $</h4>
                             </div>
                             <div className={styles.requests}>
-                                <h2> {post.comments.length} Person Intrested in your car</h2>
+                                <h2> {post.comments.length} Messages</h2>
                             </div>
                         </div>
                     </div>

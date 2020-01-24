@@ -110,9 +110,9 @@ sentM = () => {
             {this.state.post.sellerId === this.props.user._id ? 
                 <div>
                     {this.state.post.comments.length ? 
-                        <div>
+                        <div className={styles.messageHolder}>
                             {this.state.post.comments.map( (com,idx) => {
-                          return(  <div key={idx}><h3> {com.username} : {com.comment}</h3> <button onClick={()=> {this.deleteComment(this.state.post._id,idx)}}>delete comment</button></div>)
+                          return(  <div className={styles.message} key={idx}><h3> {com.username} : {com.comment}</h3> <button onClick={()=> {this.deleteComment(this.state.post._id,idx)}}>delete comment</button></div>)
                             })}
                         </div>
                         :
@@ -122,7 +122,7 @@ sentM = () => {
                 :
                 <div>
                     {this.state.sent ? 
-                       <div style={{border:'2px solid red'}}> <h3><span style={{color:'green',fontSize:'30px'}}>◷</span> Your Request has been sent to the owner; they will contact you as soon as they can  ☺ </h3></div>
+                       <div> <h3><span style={{color:'green',fontSize:'30px'}}>◷</span> Your Request has been sent to the owner; they will contact you as soon as they can  ☺ </h3></div>
                         :
                         <div>
                             <h3> Are you interested in this car ? state your first and last name with a contact information and they will reach  you as soon as they can ☺</h3>

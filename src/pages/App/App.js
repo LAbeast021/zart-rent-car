@@ -60,7 +60,9 @@ class App extends Component {
                 <div style={{
                   width:'50%',
                   marginLeft:'25%',
-                  border:'2px solid grey'
+                  border:'2px solid grey',
+                  borderRadius:'15px',
+                  boxShadow:'0 0  8px grey'
                 }}>
                 <h1 > Welcome to zart buy zart sell</h1>
                 <hr />
