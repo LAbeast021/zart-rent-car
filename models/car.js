@@ -14,7 +14,9 @@ var carSchema = new Schema ( {
     exColor:{type:String},
     intColor:{type:String},
     engine:{type:String},
-    milage:{type:Number}
+    milage:{type:Number},
+    price:{type:Number},
+    comments: []
   
 })
 

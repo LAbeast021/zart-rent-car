@@ -9,6 +9,8 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/navbar/NavBar';
 import NewCarPage from '../NewCarPage/NewCarPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
+import DetailPage from '../DetailPage/Detail'
 
 
 class App extends Component {
@@ -29,13 +31,13 @@ class App extends Component {
 
   handleAddCar = async (newCar) => {
     await carService.addCar(newCar);
-    this.props.history.push('/')
+    this.props.history.push('/profile')
   };
 
 
   // //////// RENDER /////////////////////////////
   render (){
-    console.log(this.state.user);
+    // console.log(this.state.user);
   return (
     <div className="App">
 
@@ -51,7 +53,7 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             }/>
-            <Route exact path='/login' render={({ history }) => 
+          <Route exact path='/login' render={({ history }) => 
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
@@ -62,8 +64,22 @@ class App extends Component {
             handleAddCar={this.handleAddCar}
             user = {this.state.user}
             />
-
         }></Route>
+        >
+        <Route exact path='/profile' render= {()=> 
+          <ProfilePage 
+          user = {this.state.user}
+          />
+        }>
+        </Route>
+        <Route exact path='/detail' render= {()=> 
+          <DetailPage 
+          user = {this.state.user}
+          />
+        }>
+        </Route>
+
+        
         </Switch>
     </div>
   );

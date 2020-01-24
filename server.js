@@ -12,7 +12,8 @@ require('./config/database');
 
 // routes:
 var usersRouter = require('./routes/api/users');
-var carsRouter = require('./routes/api/cars')
+var carsRouter = require('./routes/api/cars');
+var postsRouter = require('./routes/api/posts');
 
 // middlewares to set the request object
 app.use(logger('dev'));
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 // setting api routes before other routes so they get hit first:
 app.use('/api/users',usersRouter);
 app.use('/api/cars',carsRouter);
+app.use('/api/posts',postsRouter);
+
 
 
 // The following "catch all" route (note the *)is necessary
