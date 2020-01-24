@@ -15,12 +15,16 @@ async function getUserPosts (req, res){
     
 async function getAllPosts (req, res){
     var posts = await Car.find({})
-        res.status(200).json(posts)
+    res.status(200).json(posts)
     
 }
 async function getPostDetail (req, res){
-    var post = await Car.findOne({_id : req.params.id})
+    await Car.findOne({_id : req.params.id}, (err,post) => {
+        console.log(post)
         res.status(200).json(post)
+    });
+    
+///////////// commmments ///////////////////   
     
 }
 async function addComment (req, res) {

@@ -10,14 +10,18 @@ import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/navbar/NavBar';
 import NewCarPage from '../NewCarPage/NewCarPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import DetailPage from '../DetailPage/Detail'
+import DetailPage from '../DetailPage/Detail';
+import HomePage from '../HomePage/HomePage'
+
+
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+     
     };
   }
   // //////////// Handlers //////////////////////
@@ -33,6 +37,8 @@ class App extends Component {
     await carService.addCar(newCar);
     this.props.history.push('/profile')
   };
+  // ///// MOUNT /////////////////
+  
 
 
   // //////// RENDER /////////////////////////////
@@ -47,6 +53,12 @@ class App extends Component {
       ></NavBar>
       {/* /* ///////////////// routers /////////////////////// */ }
       <Switch>
+        <Route exact path='/' render={({ history }) => 
+              this.state.user ? 
+                <HomePage user={this.state.user} />
+                :
+                <h1 > Welcome to zart buy zart sell</h1>
+            }/>
         <Route exact path='/signup' render={({ history }) => 
               <SignupPage
                 history={history}
@@ -72,9 +84,10 @@ class App extends Component {
           />
         }>
         </Route>
-        <Route exact path='/detail' render= {()=> 
+        <Route exact path='/detail/:value' render= {({match})=> 
           <DetailPage 
           user = {this.state.user}
+          match={match}
           />
         }>
         </Route>
