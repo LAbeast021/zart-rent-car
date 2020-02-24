@@ -45,11 +45,8 @@ saveTheCar = async (e) => {
         return (
             <>
             <h2>Add Your Car for sale </h2>
-            <hr/>
             <h3> You Wont be able to change the information later</h3>
-            <hr/>
             <h4>You can Upload up to 15 picture of your car</h4>
-            <hr/>
             <div className={styles.formHolder}>
             <div className={`${styles.form} form-group `}>
             <input required className="form-control" type="text" name="brand" value={this.state.brand} placeholder="Enter the Brand"  onChange={this.handleChange}/>
@@ -63,8 +60,8 @@ saveTheCar = async (e) => {
             <input required className="form-control" type="text" name="milage" value={this.state.milage} placeholder="Enter milage on the car" onChange={this.handleChange}/>
             <input required className="form-control" type="text" name="price" value={this.state.price} placeholder="Enter the price $" onChange={this.handleChange}/>
             <input required className="form-control" type="file" multiple name="images" onChange={this.handleFileUpload} /> 
+            <button className={styles.savecar} onClick={this.saveTheCar} > Add Your Car </button>
             </div>
-            <button onClick={this.saveTheCar} > Add the car </button>
             </div>
            
                

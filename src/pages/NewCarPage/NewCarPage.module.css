@@ -1,25 +1,50 @@
 .form {
-    display: grid;
-    grid-template-columns: auto ;
+    display: flex;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    width: 60%;
+    border: 1px solid rgba(10, 8, 8, 0.753);
+    box-shadow:
+    0 2.3px 6.1px rgba(0, 0, 0, 0.046),
+    0 5.3px 13.9px rgba(0, 0, 0, 0.066),
+    0 9.2px 24.3px rgba(0, 0, 0, 0.082),
+    0 14.7px 38.6px rgba(0, 0, 0, 0.095),
+    0 22.6px 59.5px rgba(0, 0, 0, 0.108),
+    0 35.3px 92.9px rgba(0, 0, 0, 0.124),
+    0 58.6px 154.2px rgba(0, 0, 0, 0.144),
+    0 117px 308px rgba(0, 0, 0, 0.19)
+  ;
+  
+
 }
 .form > input {
-    width: 50%;
-    margin-bottom: 1.5%;
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     height: 60px;
+    border: 2px solid black;
 }
 .formHolder{
-    margin-left: 30%;    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    /* border: 3px solid black;   */
 }
-.formHolder > button {
+.savecar {
     margin-bottom: 2%;
     outline: none;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 30%;
+    height: 50px;
+    font-weight: 600;
+    border: .5px solid black;
 }
-.formHolder > button:hover{
+.savecar:hover{
     font-size: larger;
-    border: 5px dotted red;
+    background-color: rgb(26, 96, 124);
+    color: white;
     box-shadow: 0px 0px 5px rgb(2, 1, 1);
 }

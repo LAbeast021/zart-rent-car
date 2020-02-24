@@ -1,35 +1,45 @@
 .NavBar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    text-align: center;
     width: 100%;
     height: 150px;
     /* border: 5px dotted yellowgreen; */
-}
-.NavBar > link:hover {
-    color: white;
+    /* background-color: rgba(112, 102, 98, 0.746); */
 }
 .logout{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: teal;
-    background-color: rgb(143, 142, 143);
+    background-color: rgb(61, 61, 61);
+    border: 4px solid black;
+    margin-top: 2%;
 }
 .navCom{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6%;
+    width: 8%;
+    height: 90%;
     font-size: larger;
-    /* border: 2px solid yellow; */
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 500;
+    color: burlywood;
+}
+.notuser{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .text{
-   /* border: 2px solid black; */
-   color: rgb(29, 96, 151);
+   border-right: 2px solid black;
+   color: rgb(39, 116, 180);
    display: flex;
-   flex-direction: column;
    text-align: center;
    align-items: center;
    justify-content: space-around;
