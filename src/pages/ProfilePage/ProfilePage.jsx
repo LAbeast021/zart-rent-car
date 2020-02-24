@@ -28,7 +28,7 @@ class ProfilePage extends Component {
     render (){
         console.log(this.state.userPosts);
         return(
-        <>
+        <div className={styles.homebody}>
             {this.state.userPosts.length ? this.state.userPosts.map ( (post,idx) =>{
                 return (
                 <Link key={idx} className={styles.link} to={'/detail/' + post._id} >
@@ -57,7 +57,7 @@ class ProfilePage extends Component {
                 } ) :
                 <h1> No cars yet :(</h1>
                 }
-        </>
+        </div>
         )}
 };
 

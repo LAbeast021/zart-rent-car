@@ -1,10 +1,11 @@
 .postContainer{
     border: 3px solid darkslategray;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 1px 1px 20px grey;
-    width: 60%;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
+    width: 93%;
     height: 300px;
-    margin-left: 17%;
+    /* margin-left: 17%; */
     margin-top: 2.5%;
     margin-bottom: 1%;
     display: flex;
@@ -14,6 +15,13 @@
 .postContainer:hover{
     cursor: pointer;
     background-color: rgba(170, 168, 168, 0.342);
+    transition: 1s;
+    /* transform: rotate3d(1,1,1, 360deg); */
+    transform: scaleY(3%);
+}
+.homebody{
+    width: 75%;
+    /* border: 5px solid black; */
 }
 .image{
     max-width: 300px;

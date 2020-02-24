@@ -83,7 +83,7 @@ sentM = () => {
            <div className={styles.imageHolder}>
                { this.state.post.pictures.length ? this.state.post.pictures.map((pic,idx) => {
                    return (
-                        <img key={idx} src={pic} alt=""/>
+                        <img style={{border: '3px solid rgb(8, 77, 117)'}} key={idx} src={pic} alt=""/>
                    )
                })
             :

@@ -18,7 +18,7 @@ class HomePage extends Component {
         })
         .then( data => {
           this.setState({
-            posts:data
+            posts:data.reverse()
           })
         })
       };

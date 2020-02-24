@@ -59,7 +59,7 @@ class App extends Component {
                 :
                 <div style={{
                   width:'50%',
-                  marginLeft:'25%',
+                  // marginLeft:'25%',
                   border:'2px solid grey',
                   borderRadius:'15px',
                   boxShadow:'0 0  8px grey'
